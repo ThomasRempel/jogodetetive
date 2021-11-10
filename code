@@ -1,0 +1,43 @@
+#Declarção de Váriaveis
+
+hips = ["index inutil", " Se Carol nâo comeu o bolo então Marcio foi ao mercado", 
+        " Carol abriu a geladeira e então Márcio foi ao mercado se a Carol não comeu o bolo", 
+        " José comprou o bolo e Carol não abriu a geladeira", 
+        " Márcio não foi ao mercado", 
+        " Márcio foi ao mercado se e somente se José estava com fome",
+        " Ou Márcio não foi ao mercado ou Carol abriu a geladeira", 
+        " José não estava com fome", 
+        " Se Carol não comeu o bolo então José estava com fome", 
+        " Se José estava com fome então Márcio foi ao mercado", 
+        " Se José estava com fome então Carol abriu a geladeira se José comprou o bolo"]
+
+#corpo do programa
+
+print("JOGO DETETIVE")
+print(" Carol, José e Márcio moram juntos e um deles é responsável pelas compras, porém, no final da semana \n um dos três foi comer o último pedaço de bolo q tinha sobrado mas ele n estava lá. \n Cabe a você descobrir quem comeu o bolo. BOA SORTE!!!!!  ")
+print(" \n REGRAS: ")
+print(" 1 - Existem 10 dicas para você descobrir o(a) culpado(a) \n 2 - Você entrará com um número de 1 a 10 para visualizar a dica referente a tal número \n 3 - Você pode tentar advinhar a reposta a qualquer momento, basta seguir o comando do menu \n 4 - Digite a sua resposta usando APENAS letras minúsculas.")
+
+hipo = True
+pont = 0
+while hipo == True :
+  opcao = int(input("\n Digite um número entre 1 e 10 para acessar uma dica ou 0 para tentar adivinhar: "))
+  
+  if opcao ==0:
+    hipo = False
+    resposta = input("\n Entre com a sua resposta: ")
+    if resposta == "carol comeu o bolo":
+      print('\n')
+      if pont <= 4:
+        resposta= print("Parabéns pela ótima pontuação")
+      elif 4 < pont < 7:
+        resposta = print("Bom trabalho, mas poderia ter sido melhor")
+      else:
+        resposta = print("Muito bem, mas ainda há muito para melhorar...") 
+    else: 
+      print("\n Tente novamente...")
+      hipo = True
+
+  else:
+    print(hips[opcao])
+    pont += 1
